@@ -9,7 +9,8 @@ def home(request):
 def new(request):
     if request.method =='POST':
         form = PostForm(request.POST)
-        post=form.save()
+        post=form.save(commit=False)
+        form.save()
         return redirect('detail', post.pk)
     else:
         form = PostForm()
@@ -19,3 +20,17 @@ def detail(request, post_pk):
     post = Post.objects.get(pk=post_pk)
     return render(request, 'detail.html', {'post':post})
 
+def edit(request, post_pk):
+    post = Post.objects.get(pk=post_pk)
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        post = form.save()
+        return redirect('detail', post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'edit.html', {'form':form})
+
+def delete(request, post_pk):
+    post = Post.objects.get(pk=post_pk)
+    post.delete()
+    return redirect('home')

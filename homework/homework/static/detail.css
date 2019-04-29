@@ -1,0 +1,62 @@
+.bar{
+    width:100%;
+    height: 170px;
+    border-bottom: 2px solid black;
+    display:flex;
+    justify-content: center;
+}
+
+.text_img{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_in
+{
+    width:100%;
+    height:100%;
+}
+
+.read_text{
+    font-size: 3em;
+}
+.read_img{
+    width:20%;
+}
+
+
+.bigbox{
+    width:41%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:10px;
+}
+
+.lastbox{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+h2{
+    font-size: 3em;
+}
+
+h5{
+    font-size: 1.5em;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+
